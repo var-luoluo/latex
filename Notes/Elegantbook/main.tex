@@ -1,0 +1,108 @@
+\documentclass[lang=cn]{elegantbook}
+
+\title{ElegantBook 示例文档}
+\date{2024/03/31}
+\cover{cover.jpg}
+%% Begin~
+\begin{document}
+\maketitle
+
+
+\frontmatter
+\tableofcontents
+
+
+\mainmatter
+\chapter{Elegant\LaTeX{} 个人使用}
+
+\section{定理环境}
+
+\begin{definition}[一致连续]\label{def:1}
+  $f(x)$ 在 区间 $I$ 上有定义. 若对于任意的 $\epsilon > 0$, 存在 $\delta = \delta(\epsilon) > 0$，%
+  使得对任意的 $x_1, x_2\in I$, 只要 $|x_1 - x_2| < \delta$, 就有
+  \[
+    |f(x_1) - f(x_2)| < \epsilon ,
+  \]
+  则称函数 $f$ 在区间 $I$ 上一致连续。
+  \begin{flushright}
+    华师大·数学分析第五版
+  \end{flushright}
+\end{definition}
+
+\begin{theorem}[一致连续性定理]\label{thm:1}
+  若函数 $f$ 在闭区间 $[a,b]$ 连续, 则 $f$ 在 $[a,b]$ 一致连续.
+\end{theorem}
+
+\begin{table}[htbp]
+  \centering
+  \caption{定理类环境}
+    \begin{tabular}{llll}
+    \toprule
+    环境名 & 标签名 & 前缀 & 交叉引用 \\
+    \midrule
+    definition & label & def   & \lstinline|\ref{def:label}| \\
+    theorem & label & thm   & \lstinline|\ref{thm:label}| \\
+    postulate & label & pos & \lstinline|\ref{pos:label}| \\
+    axiom & label & axi & \lstinline|\ref{axi:label}|\\
+    lemma & label & lem   & \lstinline|\ref{lem:label}| \\
+    corollary & label & cor   & \lstinline|\ref{cor:label}| \\
+    proposition & label & pro   & \lstinline|\ref{pro:label}| \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:theorem-class}%
+\end{table}%
+
+
+\section{其他环境}
+
+\begin{exercise}\label{exer:43}
+设 $f \notin\in L(\mathcal{R}^1)$，$g$ 是 $\mathcal{R}^1$ 上的有界可测函数。证明函数
+\begin{equation}
+   \label{ex:1}
+   I(t) = \int_{\mathcal{R}^1} f(x+t)g(x)dx \quad t \in \mathcal{R}^1
+\end{equation}
+是 $\mathcal{R}^1$ 上的连续函数。 
+\end{exercise}
+\begin{solution}
+即 $D(x)$ 在 $[0,1]$ 上是 Lebesgue 可积的并且积分值为零。但 $D(x)$ 在 $[0,1]$ 上不是 Riemann 可积的。
+\end{solution}
+
+\begin{proof}
+即 $D(x)$ 在 $[0,1]$ 上是 Lebesgue 可积的并且积分值为零。但 $D(x)$ 在 $[0,1]$ 上不是 Riemann 可积的。
+\end{proof}
+
+\begin{table}[htbp]
+  \centering
+  \caption{其他环境}
+    \begin{tabular}{llll}
+    \toprule
+    环境名 & 标签名 & 前缀 & 交叉引用 \\
+    \midrule
+    exercise & label & exer   & \lstinline|\ref{exer:label}| \\
+    solution & label & -- & -- \\
+    proof & label & -- & -- \\
+    note & label & -- & -- \\
+    conclusion & label & -- & -- \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:theorem-class}%
+\end{table}%
+
+\section{公式}
+\begin{equation}
+    \label{inter2}
+    \int_0^1 D(x)dx = \int_0^1 \chi_{Q_0} (x) dx = m(Q_0) = 0
+\end{equation}
+
+
+    
+\begin{align}
+  \lim_{x\to 0} \frac{e^x-(1+2x)^\frac{1}{2}}{\ln (1+x^2)} &= \lim_{x\to 0} \frac{e^x-(1+2x)^\frac{1}{2}}{x^2}\notag\\
+  &= \lim_{x\to 0} \frac{e^x-(1+2x)^{-\frac{1}{2}}}{2x}\notag\\
+  &= \lim_{x\to 0} \frac{e^x+(1+2x)^{-\frac{3}{2}}}{2}\notag\\
+  &= 1
+\end{align}
+
+
+\section{图像}
+\end{document}
